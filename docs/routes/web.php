@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master');
 });
+
+Route::get('/pertanyaan/create', 'PostController@create');
+Route::post('/pertanyaan', 'PostController@questions');
+Route::get('/pertanyaan', 'PostController@index');
+Route::get('/pertanyaan/{id}', 'PostController@show');
+Route::get('/pertanyaan/{id}/edit', 'PostController@edit');
+Route::put('/pertanyaan/{id}', 'PostController@update');
+Route::delete('/pertanyaan/{id}', 'PostController@destroy');

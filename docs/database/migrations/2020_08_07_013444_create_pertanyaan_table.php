@@ -14,12 +14,12 @@ class CreatePertanyaanTable extends Migration
     public function up()
     {
         Schema::create('pertanyaan', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->nullable();
             $table->string('judul');
             $table->longText('isi');
 
             //foreign key
-            $table->unsignedBigInteger('profile_id');
+            $table->unsignedBigInteger('profile_id')->nullable();
             $table->foreign('profile_id')->references('id')->on('profiles');
 
             // $table->unsignedBigInteger('jawaban_id');
